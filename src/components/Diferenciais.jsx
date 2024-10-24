@@ -13,7 +13,7 @@ const Diferenciais = () => {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { duration: 1.5, when: "beforeChildren", staggerChildren: 0.3 },
+            transition: { duration: 1.3, when: "beforeChildren", staggerChildren: 0.3 },
         },
     };
 

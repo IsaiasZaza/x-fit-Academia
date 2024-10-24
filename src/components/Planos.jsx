@@ -14,13 +14,13 @@ const Planos = () => {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { duration: 2, when: "beforeChildren", staggerChildren: 0.3 },
+            transition: { duration: 1.3, when: "beforeChildren", staggerChildren: 0.3 },
         },
     };
 
     const cardVariants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+        visible: { opacity: 1, y: 0, transition: { duration: 1.3 } },
     };
 
     return (
