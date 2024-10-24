@@ -3,18 +3,15 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link as ScrollLink } from 'react-scroll';
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Função para lidar com a rolagem
+    // Função para detectar rolagem
     const handleScroll = () => {
-        if (window.scrollY > 50) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
+        setIsScrolled(window.scrollY > 50);
     };
 
     useEffect(() => {
@@ -24,38 +21,51 @@ const Navbar = () => {
         };
     }, []);
 
+    // Variantes de animação para o menu móvel
+    const variants = {
+        open: { opacity: 1, height: "auto", transition: { duration: 0.5 } },
+        closed: { opacity: 0, height: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black opacity-80" : "bg-transparent"}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black bg-opacity-80 shadow-lg" : "bg-transparent"}`}>
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                     <Image
-                        src="/menu.png"
-                        width={300}
+                        src="/menu2.png"
+                        width={230}
                         height={150}
                         alt="Logo da Academia"
                         className={`transition-transform duration-300 ${isScrolled ? 'transform scale-90' : 'transform scale-100'}`}
                     />
                 </div>
                 <div className="hidden md:flex space-x-4 text-white font-semibold">
-                    <ScrollLink to="sobre" smooth={true} duration={500} className="hover:text-orange-100">Sobre Nós</ScrollLink>
-                    <ScrollLink to="planos" smooth={true} duration={500} className="hover:text-orange-100">Planos</ScrollLink>
-                    <ScrollLink to="localizacao" smooth={true} duration={500} className="hover:text-orange-100">Localização</ScrollLink>
-                    <ScrollLink to="contato" smooth={true} duration={500} className="hover:text-orange-100">Contato</ScrollLink>
+                    <ScrollLink to="sobre" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Sobre Nós</ScrollLink>
+                    <ScrollLink to="planos" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Planos</ScrollLink>
+                    <ScrollLink to="localizacao" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Localização</ScrollLink>
+                    <ScrollLink to="contato" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Contato</ScrollLink>
                 </div>
                 <div className="md:hidden flex items-center">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-orange-100">
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className="text-orange-100 transition-transform duration-200 transform hover:scale-110"
+                    >
                         {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
                     </button>
                 </div>
             </div>
-            {isOpen && (
-                <div className="md:hidden bg-black text-white transition-all">
-                    <ScrollLink to="sobre" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300">Sobre Nós</ScrollLink>
-                    <ScrollLink to="planos" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300">Planos</ScrollLink>
-                    <ScrollLink to="localizacao" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300">Localização</ScrollLink>
-                    <ScrollLink to="contato" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300">Contato</ScrollLink>
-                </div>
-            )}
+            <motion.div 
+                initial={false}
+                animate={isOpen ? "open" : "closed"}
+                variants={variants}
+                className="md:hidden bg-black text-white overflow-hidden"
+                style={{ position: 'absolute', top: '64px', left: 0, right: 0 }}
+            >
+                <ScrollLink to="sobre" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Sobre Nós</ScrollLink>
+                <ScrollLink to="planos" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Planos</ScrollLink>
+                <ScrollLink to="localizacao" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Localização</ScrollLink>
+                <ScrollLink to="contato" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Contato</ScrollLink>
+            </motion.div>
         </nav>
     );
 };
