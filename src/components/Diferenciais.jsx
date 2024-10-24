@@ -32,19 +32,19 @@ const Diferenciais = () => {
         >
             <motion.div className="container mx-auto">
                 <motion.h2
-                    className="text-4xl font-bold text-yellow-500 mb-6 text-center uppercase"
+                    className="text-3xl w-full md:text-4xl font-bold text-yellow-500 mb-6 text-center uppercase"
                     variants={cardVariants}
                 >
                     Mais do que apenas uma academia
                 </motion.h2>
                 <motion.p
-                    className="text-gray-600 text-lg mb-12 font-semibold lg:w-1/2 w-full text-center mx-auto"
+                    className="text-gray-600 text-base md:text-lg mb-12 font-semibold lg:w-1/2 w-full text-center mx-auto"
                     variants={cardVariants}
                 >
                     Oferecemos equipamentos de classe mundial, treinadores e aulas para ajudá-lo a alcançar seus objetivos de
                     condicionamento físico com facilidade. Nossa missão é cuidar de cada um dos nossos membros.
                 </motion.p>
-                <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {/* Card 1 */}
                     <motion.div
                         className="p-8 bg-gray-100 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -55,7 +55,7 @@ const Diferenciais = () => {
                                 <img src="/levanta.png" alt="Facilidades de Primeira" className="w-12 h-12" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-semibold text-yellow-500 mb-4 text-center">
+                        <h3 className="text-xl md:text-2xl font-semibold text-yellow-500 mb-4 text-center">
                             Instalações de Ponta
                         </h3>
                         <p className="text-gray-700 mb-4 text-center">
@@ -78,7 +78,7 @@ const Diferenciais = () => {
                                 <img src="/peso.png" alt="Diversas Aulas" className="w-12 h-12" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-semibold text-yellow-500 mb-4 text-center">
+                        <h3 className="text-xl md:text-2xl font-semibold text-yellow-500 mb-4 text-center">
                             Centenas de Aulas Diversas
                         </h3>
                         <p className="text-gray-700 mb-4 text-center">
@@ -101,7 +101,7 @@ const Diferenciais = () => {
                                 <img src="/barra.png" alt="Treinadores" className="w-12 h-12" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-semibold text-yellow-500 mb-4 text-center">
+                        <h3 className="text-xl md:text-2xl font-semibold text-yellow-500 mb-4 text-center">
                             Treinadores Experientes
                         </h3>
                         <p className="text-gray-700 mb-4 text-center">

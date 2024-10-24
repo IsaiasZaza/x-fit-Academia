@@ -23,7 +23,7 @@ const Localizacao = () => {
                 >
                     Venha nos visitar e conheça nossas instalações!
                 </motion.p>
-                <div className="relative">
+                <div className="relative lg:px-0 px-4">
                     {/* Mapa incorporado */}
                     <motion.iframe
                         className="w-full h-96 rounded-lg shadow-lg"
@@ -35,7 +35,7 @@ const Localizacao = () => {
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     />
-                    <div className="absolute top-0 left-0 bg-yellow-400 text-gray-800 py-2 px-4 rounded-br-lg font-bold">
+                    <div className="absolute top-0 lg:left-0 left-4 bg-yellow-400 text-gray-800 py-2 px-4 rounded-br-lg font-bold">
                         Academia Xfit
                     </div>
                 </div>
