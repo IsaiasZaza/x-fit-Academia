@@ -32,9 +32,9 @@ const Banner = () => {
                     className="relative text-center px-4 md:px-8"
                 >
                     <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-orange-100">
-                        Bem-vindo à Academia Exemplar
+                        Bem-vindo à Xfit
                         <br />
-                        <span className="text-orange-100 mt-24">
+                        <span className="text-orange-100 mt-24 lg:text-4xl md:text-3xl text-xl">
                             <Typewriter
                                 words={['Treine Forte!', 'Supere Seus Limites!', 'Alcance Seus Objetivos!']}
                                 loop={true}
