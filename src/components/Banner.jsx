@@ -8,16 +8,20 @@ import { motion } from 'framer-motion';
 const Banner = () => {
     return (
         <div className="relative h-screen flex flex-col justify-center items-center text-white">
-            {/* Video de Fundo */}
+            {/* Wrapper Responsivo do Vídeo */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-                <iframe
-                    className="absolute inset-0 w-full h-full object-cover"
-                    src="https://www.youtube.com/embed/Z3TdDTG97j8?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&loop=1&playlist=Z3TdDTG97j8"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                ></iframe>
+                <div className="relative w-full h-full">
+                    <div className="w-full h-full absolute inset-0">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/Z3TdDTG97j8?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&loop=1&playlist=Z3TdDTG97j8"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
             </div>
 
             {/* Overlay */}
@@ -40,9 +44,9 @@ const Banner = () => {
                                 loop={true}
                                 cursor
                                 cursorStyle=""
-                                typeSpeed={70}  // Mais lento
-                                deleteSpeed={50}  // Mais lento
-                                delaySpeed={3500}  // Mais devagar na troca de frases
+                                typeSpeed={60}  // Mais lento
+                                deleteSpeed={30}  // Mais lento
+                                delaySpeed={2500}  // Mais devagar na troca de frases
                             />
                         </span>
                     </h1>
