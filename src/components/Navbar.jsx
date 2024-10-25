@@ -8,10 +8,12 @@ import { motion } from "framer-motion";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isBackgroundOpaque, setIsBackgroundOpaque] = useState(false);
 
-    // Função para detectar rolagem
     const handleScroll = () => {
-        setIsScrolled(window.scrollY > 50);
+        const scrollPosition = window.scrollY;
+        setIsScrolled(scrollPosition > 50);
+        setIsBackgroundOpaque(scrollPosition >= 650);  // Fundo opaco entre 850px e 1000px de rolagem
     };
 
     useEffect(() => {
@@ -23,12 +25,14 @@ const Navbar = () => {
 
     // Variantes de animação para o menu móvel
     const variants = {
-        open: { opacity: 1, height: "auto", transition: { duration: 0.5 } },
-        closed: { opacity: 0, height: 0, transition: { duration: 0.5 } }
+        open: { opacity: 1, height: "auto", transition: { duration: 0.3 } },
+        closed: { opacity: 0, height: 0, transition: { duration: 0.3 } }
     };
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black shadow-lg" : "bg-transparent"}`}>
+        <nav 
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? (isBackgroundOpaque ? "bg-black shadow-lg" : "bg-transparent") : "bg-black"}`}
+        >
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                     <Image
