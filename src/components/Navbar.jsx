@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                     <Image
-                        src="/menu3.png"
+                        src="/menu4.png"
                         width={230}
                         height={150}
                         alt="Logo da Academia"
