@@ -1,3 +1,4 @@
+// Banner.js
 "use client";
 
 import React from 'react';
@@ -7,18 +8,20 @@ const Banner = () => {
     return (
         <div className="relative h-screen flex flex-col justify-center items-center text-white">
             {/* Video de Fundo */}
-            <video
-                className="absolute inset-0 w-full h-full object-cover"
-                src="mp.mp4"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                autoPlay
-                muted
-                modestbranding="1"
-            />
-
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="mp.mp4"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    autoPlay
+                    muted
+                    playsInline
+                    modestbranding="1"
+                />
+            </div>
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -33,7 +36,7 @@ const Banner = () => {
                             words={['Treine Forte!', 'Supere Seus Limites!', 'Alcance Seus Objetivos!']}
                             loop={true}
                             cursor
-                            cursorStyle=''
+                            cursorStyle=""
                             typeSpeed={50}
                             deleteSpeed={30}
                             delaySpeed={3000}
