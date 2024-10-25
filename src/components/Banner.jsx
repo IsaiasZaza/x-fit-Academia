@@ -23,7 +23,7 @@ const Banner = () => {
             {/* Conteúdo */}
             <div className="relative text-center px-4 md:px-8">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
-                    Bem-vindo à <span className='text-yellow-400 font-semibold'>X</span><span className='text-white gap-4 mr-2'>fit</span><span className='text-yellow-400'>Academia</span> 
+                    Bem-vindo à <span className='text-[#FFFF00] font-semibold'>X</span><span className='text-white gap-4 mr-2'>fit</span><span className='text-[#FFFF00]'>Academia</span> 
                     <br />
                     <span className="text-white mt-24">
                         <Typewriter

@@ -23,7 +23,7 @@ const Footer = () => {
                 {/* Texto central */}
                 <Slide direction="up" duration={1000} triggerOnce>
                     <div className="text-center mb-4">
-                        <h3 className="text-xl font-bold text-yellow-500"><span>X</span><span className="text-white">fit</span> Academia</h3>
+                        <h3 className="text-xl font-bold text-[#FFFF00]"><span>X</span><span className="text-white">fit</span> Academia</h3>
                         <p className="mb-2">Transforme sua vida com saúde e bem-estar.</p>
                         <p>© {new Date().getFullYear()} Academia Xfit. Todos os direitos reservados.</p>
                         <p className="text-sm mt-2">Desenvolvido por Isaias</p> {/* Frase de crédito */}
