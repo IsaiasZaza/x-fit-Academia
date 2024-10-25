@@ -13,7 +13,7 @@ const Navbar = () => {
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
         setIsScrolled(scrollPosition > 50);
-        setIsBackgroundOpaque(scrollPosition >= 650);  // Fundo opaco entre 850px e 1000px de rolagem
+        setIsBackgroundOpaque(scrollPosition >= 620);  // Fundo opaco entre 850px e 1000px de rolagem
     };
 
     useEffect(() => {
