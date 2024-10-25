@@ -22,10 +22,10 @@ const Banner = () => {
 
             {/* Conteúdo */}
             <div className="relative text-center px-4 md:px-8">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-orange-100">
-                    Bem-vindo à Academia <span className='text-yellow-400 font-semibold'>X</span><span className='text-white'>fit</span>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
+                    Bem-vindo à <span className='text-yellow-400 font-semibold'>X</span><span className='text-white gap-4 mr-2'>fit</span><span className='text-yellow-400'>Academia</span> 
                     <br />
-                    <span className="text-orange-100 mt-24">
+                    <span className="text-white mt-24">
                         <Typewriter
                             words={['Treine Forte!', 'Supere Seus Limites!', 'Alcance Seus Objetivos!']}
                             loop={true}
@@ -37,7 +37,7 @@ const Banner = () => {
                         />
                     </span>
                 </h1>
-                <p className="text-sm md:text-lg lg:text-xl mb-10 max-w-3xl mx-auto leading-relaxed text-orange-100">
+                <p className="text-sm md:text-lg lg:text-xl mb-10 max-w-3xl mx-auto leading-relaxed text-yellow-200">
                     Estamos aqui para ajudar você a alcançar o corpo dos seus sonhos. Treine conosco e transforme sua vida hoje!
                 </p>
                 <a
