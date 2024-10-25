@@ -28,7 +28,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black bg-opacity-80 shadow-lg" : "bg-transparent"}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black shadow-lg" : "bg-transparent"}`}>
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                     <Image
