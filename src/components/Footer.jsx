@@ -1,52 +1,38 @@
-"use client";
-
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Slide } from 'react-awesome-reveal';
+import React from 'react';
 
 const Footer = () => {
-    return (
-        <footer className="bg-black text-gray-300 py-16 lg:px-1 px-1">
-            <div className="container mx-auto flex flex-col items-center">
-                {/* Espaço para o logo */}
-                <Slide direction="down" duration={1000} triggerOnce>
-                    <div className="mb-8">
-                        <img 
-                            src="/Xfit.png" // Substitua pelo caminho do seu logo
-                            alt="Logo da Academia" 
-                            className="h-18" 
-                        />
-                    </div>
-                </Slide>
-                
-                {/* Texto central */}
-                <Slide direction="up" duration={1000} triggerOnce>
-                    <div className="text-center mb-4">
-                        <h3 className="text-xl font-bold text-[#FFFF00]"><span>X</span><span className="text-white">fit</span> Academia</h3>
-                        <p className="mb-2">Transforme sua vida com saúde e bem-estar.</p>
-                        <p>© {new Date().getFullYear()} Academia Xfit. Todos os direitos reservados.</p>
-                        <p className="text-sm mt-2">Desenvolvido por Isaias</p> {/* Frase de crédito */}
-                    </div>
-                </Slide>
-
-                {/* Redes sociais */}
-                <Slide direction="up" duration={1000} triggerOnce>
-                    <div className="flex space-x-6">
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition duration-300">
-                            <FontAwesomeIcon icon={faFacebookF} size="lg" />
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition duration-300">
-                            <FontAwesomeIcon icon={faInstagram} size="lg" />
-                        </a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition duration-300">
-                            <FontAwesomeIcon icon={faTwitter} size="lg" />
-                        </a>
-                    </div>
-                </Slide>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="bg-gray-900 text-white py-8 mt-12 font-roboto">
+      <div className="flex flex-col md:flex-row justify-around pb-5 border-b border-gray-700">
+        <div className="max-w-xs mb-5 md:mb-0">
+          <h3 className="text-xl font-bold mb-4">Institucional</h3>
+          <ul className="space-y-2">
+            <li>Sobre a Ótica Ramiro</li>
+          </ul>
+        </div>
+        <div className="max-w-xs mb-5 md:mb-0">
+          <h3 className="text-xl font-bold mb-4">Categorias</h3>
+          <ul className="space-y-2">
+            <li>Lentes de contato</li>
+          </ul>
+        </div>
+        <div className="max-w-xs">
+          <h3 className="text-xl font-bold mb-4">Fale Conosco</h3>
+          <ul className="space-y-2">
+            <li>Atendimento ao cliente</li>
+          </ul>
+        </div>
+      </div>
+      <div className="flex flex-col items-center pt-5">
+        <p className="mb-3 text-center text-sm">© 2024 Ótica Ramiro | Todos os direitos reservados</p>
+        <div className="flex space-x-5 text-lg">
+          <a href="https://www.instagram.com/oticasramiro" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">Instagram</a>
+          <a href="https://www.facebook.com/oticasramiro" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">Facebook</a>
+          <a href="https://www.twitter.com/oticasramiro" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">Twitter</a>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

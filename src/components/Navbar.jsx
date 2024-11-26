@@ -1,77 +1,21 @@
-"use client";
+"use client"
+
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link as ScrollLink } from 'react-scroll';
-import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isBackgroundOpaque, setIsBackgroundOpaque] = useState(false);
-
-    const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        setIsScrolled(scrollPosition > 50);
-        setIsBackgroundOpaque(scrollPosition >= 620);  // Fundo opaco entre 850px e 1000px de rolagem
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    // Variantes de animação para o menu móvel
-    const variants = {
-        open: { opacity: 1, height: "auto", transition: { duration: 0.3 } },
-        closed: { opacity: 0, height: 0, transition: { duration: 0.3 } }
-    };
-
-    return (
-        <nav 
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? (isBackgroundOpaque ? "bg-black shadow-lg" : "bg-transparent") : "bg-black"}`}
-        >
-            <div className="container mx-auto px-4 flex justify-between items-center h-16">
-                <div className="flex-shrink-0">
-                    <Image
-                        src="/menu4.png"
-                        width={230}
-                        height={150}
-                        alt="Logo da Academia"
-                        className={`transition-transform duration-300 ${isScrolled ? 'transform scale-90' : 'transform scale-100'}`}
-                    />
-                </div>
-                <div className="hidden md:flex space-x-4 text-white font-semibold">
-                    <ScrollLink to="sobre" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Sobre Nós</ScrollLink>
-                    <ScrollLink to="planos" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Planos</ScrollLink>
-                    <ScrollLink to="localizacao" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Localização</ScrollLink>
-                    <ScrollLink to="contato" smooth={true} duration={500} className="hover:text-orange-100 transition-colors">Contato</ScrollLink>
-                </div>
-                <div className="md:hidden flex items-center">
-                    <button 
-                        onClick={() => setIsOpen(!isOpen)} 
-                        className="text-orange-100 transition-transform duration-200 transform hover:scale-110"
-                    >
-                        {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
-                    </button>
-                </div>
-            </div>
-            <motion.div 
-                initial={false}
-                animate={isOpen ? "open" : "closed"}
-                variants={variants}
-                className="md:hidden bg-black text-white overflow-hidden"
-                style={{ position: 'absolute', top: '64px', left: 0, right: 0 }}
-            >
-                <ScrollLink to="sobre" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Sobre Nós</ScrollLink>
-                <ScrollLink to="planos" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Planos</ScrollLink>
-                <ScrollLink to="localizacao" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Localização</ScrollLink>
-                <ScrollLink to="contato" smooth={true} duration={500} className="block px-4 py-2 hover:bg-pink-300 transition-colors">Contato</ScrollLink>
-            </motion.div>
-        </nav>
-    );
+  return (
+    <nav className="flex items-center justify-between px-5 py-3 bg-yellow-400 shadow-md sticky top-0 z-50">
+      <div className="flex-1">
+        {/* Logo image can go here */}
+      </div>
+      <Link href="/" className="text-white text-base ml-5 hover:text-yellow-400 transition-colors">Home</Link>
+      <Link href="/produtos" className="text-white text-base ml-5 hover:text-yellow-400 transition-colors">Produtos</Link>
+      <Link href="/contato" className="text-white text-base ml-5 hover:text-yellow-400 transition-colors">Contato</Link>
+      <Link href="/login" className="text-white text-base ml-5 hover:text-yellow-400 transition-colors">Login</Link>
+      <Link href="/criar-conta" className="text-white text-base ml-5 hover:text-yellow-400 transition-colors">Criar Conta</Link>
+    </nav>
+  );
 };
 
 export default Navbar;
